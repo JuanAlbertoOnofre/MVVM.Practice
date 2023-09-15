@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVM.Practice.View.HomePage"
+             Title="HomePage"
+             xmlns:viewmodel="clr-namespace:MVVM.Practice.ViewModel"
+             x:DataType="viewmodel:HomeViewModel">
+    <!--EnlaceCompilado
+    x:DataType="viewmodel:HomeViewModel"-->
+
+    <VerticalStackLayout BackgroundColor="Red">
+        <Entry Placeholder="Escribe un texto" Text="{Binding TextEntry}"/>
+        <Label Text="{Binding TextLabel, Mode=TwoWay}"/>
+        <Button Text="Click me" Command="{Binding ShowStringCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>
