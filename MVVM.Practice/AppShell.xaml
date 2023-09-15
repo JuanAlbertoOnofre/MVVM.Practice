@@ -8,8 +8,7 @@
     xmlns:view="clr-namespace:MVVM.Practice.View">
 
     <ShellContent
-        Title="HomePage"
-        ContentTemplate="{DataTemplate view:HomePage}"
-        Route="HomePage"/>
-
+        Title="MainPage"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage"/>
 </Shell>
