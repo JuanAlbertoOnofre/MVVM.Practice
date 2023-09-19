@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using MVVM.Practice.ViewModel;
 
 namespace MVVM.Practice
 {
@@ -16,10 +17,23 @@ namespace MVVM.Practice
                 });
 
 #if DEBUG
-		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
-
+            builder.RegiosterViewModel();
+            builder.RegiosterViews();
             return builder.Build();
+        }
+
+        public static MauiAppBuilder RegiosterViewModel(this MauiAppBuilder mauiAppBuilder)
+        {
+            mauiAppBuilder.Services.AddSingleton<HomeViewModel>();
+            return mauiAppBuilder;
+        }
+
+        public static MauiAppBuilder RegiosterViews(this MauiAppBuilder mauiAppBuilder)
+        {
+            mauiAppBuilder.Services.AddTransient<MainPage>();
+            return mauiAppBuilder;
         }
     }
 }

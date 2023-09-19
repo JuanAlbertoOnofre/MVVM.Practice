@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<views:ContentPageBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MVVM.Practice.MainPage">
+             x:Class="MVVM.Practice.MainPage"
+             xmlns:views="clr-namespace:MVVM.Practice.View"
+                       xmlns:viewmodel="clr-namespace:MVVM.Practice.ViewModel"
+                       x:DataType="viewmodel:HomeViewModel">
 
     <ScrollView>
         <VerticalStackLayout
@@ -9,33 +12,14 @@
             Padding="30,0"
             VerticalOptions="Center">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+            <Entry Text="{Binding TextEntry}"/>
+            <Label Text="{Binding TextLabel}"/>
+            <Button Text="Click me" BackgroundColor="{DynamicResource ButtonColorCustom}" Command="{Binding ShowStringCommand}"/>
+            <Button Text="Click" Command="{Binding ShowInLabelAndEntryCommand}"/>
+            <Entry Text="{Binding Palabras.Text1}"/>
+            <Entry Text="{Binding Palabras.Text2}"/>
 
         </VerticalStackLayout>
     </ScrollView>
 
-</ContentPage>
+</views:ContentPageBase>

@@ -2,15 +2,13 @@ using MVVM.Practice.ViewModel;
 
 namespace MVVM.Practice.View;
 
-public partial class HomePage : ContentPage
+public partial class HomePage : ContentPageBase
 {
 	//Dependency injection
-	private readonly HomeViewModel _viewModel;
-	public HomePage(HomeViewModel viewModel)
+
+	public HomePage()
 	{
-		BindingContext = _viewModel = viewModel;
 		InitializeComponent();
 	}
 
-	public HomePage() { }
 }
